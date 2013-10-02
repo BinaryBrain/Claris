@@ -1,6 +1,8 @@
 #!/bin/sh
 echo 'Running...'
+chmod +x ./bin/hubot
+
 while true
-do
-hubot --name Claris -a skype
+	do
+	./bin/hubot --name Claris -a skype
 done
