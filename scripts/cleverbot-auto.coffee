@@ -13,7 +13,7 @@
 #   hubot get ratio - Give the current ratio.
 #
 # Author:
-#   Sacha
+#   BinaryBrain
 
 cleverbot = require('cleverbot-node')
 
