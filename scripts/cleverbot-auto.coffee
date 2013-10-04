@@ -8,10 +8,12 @@
 #   None
 #
 # Commands:
-#   hubot c <input>
+#   <input> - Answer with a given ratio.
+#   hubot set ratio <n>% - Set the answer ratio to a certain percentage.
+#   hubot get ratio - Give the current ratio.
 #
 # Author:
-#   ajacksified
+#   Sacha
 
 cleverbot = require('cleverbot-node')
 

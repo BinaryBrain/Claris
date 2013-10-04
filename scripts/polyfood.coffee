@@ -4,6 +4,10 @@
 # Commands:
 #   hubot polyfood me <restaurant> - Searches Polyfood for the restaurant.
 #   hubot polyfood me all - Searches Polyfood for the every restaurants.
+#
+# Author:
+#   BinaryBrain
+
 module.exports = (robot) ->
   robot.respond /(polyfood|pf)( me)?( .*)?/i, (msg) ->
     restau = msg.match[3] || 'all'
