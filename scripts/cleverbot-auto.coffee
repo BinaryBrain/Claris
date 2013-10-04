@@ -15,7 +15,7 @@
 
 cleverbot = require('cleverbot-node')
 
-ratio = 0.1
+ratio = 0.3
 
 module.exports = (robot) ->
 	c = new cleverbot()
