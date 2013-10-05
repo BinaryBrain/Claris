@@ -21,3 +21,7 @@ module.exports = (robot) ->
 
         msg.send msg.random(bonjour)+" "+sender
 
+    robot.hear /(et)?[\s,\?]+(sinon)?[\s,\?]+((Comment)?(ça va)|(Tu vas bien)|(ça roule)|(ça farte))[\s,\?]+Claris.*/i, (msg) ->
+        bien = ["Bien bien", "Pas mal", "Oui", "Bof", "Super", "Imothep"]
+        etToi= ["et toi?", "et vous?", ""]
+        msg.send msg.random(bien)+" "+msg.random(etToi)
