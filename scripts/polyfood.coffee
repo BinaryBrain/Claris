@@ -28,7 +28,7 @@ module.exports = (robot) ->
                     if restau == 'all' || plat.restaurant.nom.toLowerCase().indexOf(restau.toLowerCase()) != -1
                         unless answer == ""
                             answer += "\n----------\n"
-                        answer += plat.restaurant.nom.trim
+                        answer += plat.restaurant.nom.trim()
                         answer += " ("+plat.prix.E.trim()+" CHF)"
                         answer += "\n"
                         answer += plat.description.replace /\n+/, " + "
