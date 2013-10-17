@@ -27,7 +27,11 @@ module.exports = (robot) ->
 			bypass = true
 		if Math.random() < ratio || bypass
 			data = msg.message.text
-			c.write(data, (c) => msg.send(c.message))
+			c.write(data, (c) => 
+				clevermsg = c.message
+				if(clevermsg.substring(0,6) != "<html>")
+					msg.send(clevermsg)
+			)
 			
 	
 	robot.respond /set ratio (\d+)%?/i, (msg) ->
