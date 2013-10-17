@@ -22,9 +22,13 @@ module.exports = (robot) ->
 
 	robot.catchAll (msg) ->
 		ratio = robot.brain.get('cleverRatio')
-		if Math.random() < ratio
-			data = msg.message.text
-			c.write(data, (c) => msg.send(c.message))
+		data = msg.message.text
+		c.write(data, (c) => 
+            if Math.random() < ratio
+                msg.send(c.message)
+        )
+		
+			
 	
 	robot.respond /set ratio (\d+)%?/i, (msg) ->
 		robot.brain.set 'cleverRatio', msg.match[1]/100
