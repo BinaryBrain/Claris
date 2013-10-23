@@ -27,7 +27,8 @@
     "hubot":         ">= 2.6.0 < 3.0.0",
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "hubot-skype": "*",
-    "cleverbot-node": "*"
+    "cleverbot-node": "*",
+    "html-entities": "mdevils/node-html-entities"
   },
 
   "engines": {

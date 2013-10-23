@@ -3,6 +3,7 @@
 #
 # Dependencies:
 #   "cleverbot-node": "0.1.1"
+#   "html-entities": "mdevils/node-html-entities"
 #
 # Configuration:
 #   None
@@ -17,6 +18,9 @@
 
 cleverbot = require('cleverbot-node')
 
+Entities = require('html-entities').AllHtmlEntities
+entities = new Entities()
+
 module.exports = (robot) ->
 	c = new cleverbot()
 
@@ -26,11 +30,11 @@ module.exports = (robot) ->
 		if(msg.message.text.match(/claris/i) != null)
 			bypass = true
 		if Math.random() < ratio || bypass
-			data = msg.message.text
+			data = entities.encode(msg.message.text)
 			c.write(data, (c) => 
 				clevermsg = c.message
 				if(clevermsg.substring(0,6) != "<html>")
-					msg.send(clevermsg)
+					msg.send(entities.decode(clevermsg))
 			)
 			
 	
