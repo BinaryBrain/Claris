@@ -30,11 +30,11 @@ module.exports = (robot) ->
 		if(msg.message.text.match(/claris/i) != null)
 			bypass = true
 		if Math.random() < ratio || bypass
-			data = entities.encode(msg.message.text)
+			data = entities.encode(msg.message.text.replace(/claris/gi, "Cleverbot"))
 			c.write(data, (c) => 
 				clevermsg = c.message
 				if(clevermsg.substring(0,6) != "<html>")
-					msg.send(entities.decode(clevermsg))
+					msg.send(entities.decode(clevermsg).replace(/cleverbot/gi, "Claris"))
 			)
 			
 	
