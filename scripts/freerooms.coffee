@@ -35,6 +35,9 @@ module.exports = (robot) ->
     
     answer = rooms.join(", ")
     
+    answer = answer.replace(/\(/g, '( ')
+    answer = answer.replace(/\)/g, ' )')
+    
     unless answer == ""
         msg.send(answer)
     else
